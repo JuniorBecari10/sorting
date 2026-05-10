@@ -1,7 +1,7 @@
-#include "average.c"
-#include "capitalist.c"
-#include "delete.c"
-#include "sum.c"
+#include "files/average.c"
+#include "files/capitalist.c"
+#include "files/delete.c"
+#include "files/sum.c"
 
 #include "utils.h"
 

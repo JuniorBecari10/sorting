@@ -12,4 +12,3 @@
     FOREACHH(arr) printf("%d ", *e);             \
     printf("\n");                                \
 }
-

@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "utils.h"
+#include "../utils.h"
 
 // Calculates the average of all the elements and fills the entire array with it.
 // Time: O(n)
