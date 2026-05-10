@@ -1,0 +1,21 @@
+#!/bin/sh
+
+build() {
+    gcc main.c -o sort -O3 -Wall -Wextra
+}
+
+run() {
+    build && ./sort
+}
+
+clean() {
+    rm -f sort
+}
+
+case "${1:-build}" in
+    build)        build ;;
+    run)          run ;;
+    clean)        clean ;;
+    exec) ./sort ;;
+    *) echo "usage: $0 [build|run|clean|exec]" >&2; exit 1 ;;
+esac
