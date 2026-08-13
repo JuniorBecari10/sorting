@@ -6,7 +6,7 @@
 
 #define ARRAY_LEN(arr) sizeof(arr) / sizeof((arr)[0])
 
-// size_t delete_sort_aux(int32_t *array, size_t len) {
+// size_t delete_sort_aux(int32_t *array, size_t *len) {
 //     if (len == 0)
 //         return 0;
 
@@ -14,7 +14,7 @@
 //     int32_t *sorted = malloc(len * sizeof(int32_t));
 //     int32_t largest = array[0];
 
-//     for (size_t i = 0; i < len; i++) {
+//     for (size_t i = 0; i < *len; i++) {
 //         if (array[i] >= largest) {
 //             largest = array[i]; // i know it's redundant when array[i] == largest, but this optimizes out a comparison.
 //             sorted[sorted_len++] = array[i];
@@ -29,14 +29,14 @@
 // Time: O(n)
 // Space: O(1)
 // Weakness: deletes elements
-size_t delete_sort(int32_t *array, size_t len) {
+size_t purge_sort(int32_t *array, size_t *len) {
     if (len == 0)
         return 0;
 
     size_t sorted_len = 0;
     int32_t largest = array[0];
 
-    for (size_t i = 0; i < len; i++) {
+    for (size_t i = 0; i < *len; i++) {
         if (array[i] >= largest) {
             largest = array[i];
             array[sorted_len++] = array[i];
@@ -44,14 +44,4 @@ size_t delete_sort(int32_t *array, size_t len) {
     }
 
     return sorted_len;
-}
-
-int main(void) {
-    int32_t array[] = {1, 2, 4, 3, 2, 6, 5};
-    size_t len = delete_sort(array, ARRAY_LEN(array));
-
-    for (size_t i = 0; i < len; i++)
-        printf("%d\n", array[i]);
-
-    return 0;
 }

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 build() {
-    gcc main.c -o sort -O3 -Wall -Wextra
+    gcc main.c utils.c -o sort -O3 -Wall -Wextra
 }
 
 run() {
